@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
+		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
+		BE52B6B21F92ECE5001A476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B01F92ECE5001A476D /* Main.storyboard */; };
+		BE52B6B41F92ECE5001A476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B31F92ECE5001A476D /* Assets.xcassets */; };
+		BE52B6B71F92ECE5001A476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */; };
+		BE52B6C21F92ECE5001A476D /* OsmondRCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6C11F92ECE5001A476D /* OsmondRCTests.swift */; };
+		BE52B6CD1F92ECE5001A476D /* OsmondRCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE52B6BE1F92ECE5001A476D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE52B6A11F92ECE5001A476D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE52B6A81F92ECE5001A476D;
+			remoteInfo = OsmondRC;
+		};
+		BE52B6C91F92ECE5001A476D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE52B6A11F92ECE5001A476D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE52B6A81F92ECE5001A476D;
+			remoteInfo = OsmondRC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE52B6AE1F92ECE5001A476D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE52B6B11F92ECE5001A476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE52B6B31F92ECE5001A476D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE52B6B61F92ECE5001A476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE52B6B81F92ECE5001A476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE52B6BD1F92ECE5001A476D /* OsmondRCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OsmondRCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE52B6C11F92ECE5001A476D /* OsmondRCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsmondRCTests.swift; sourceTree = "<group>"; };
+		BE52B6C31F92ECE5001A476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE52B6C81F92ECE5001A476D /* OsmondRCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OsmondRCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsmondRCUITests.swift; sourceTree = "<group>"; };
+		BE52B6CE1F92ECE5001A476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE52B6A61F92ECE5001A476D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE52B6BA1F92ECE5001A476D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE52B6C51F92ECE5001A476D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE52B6A01F92ECE5001A476D = {
+			isa = PBXGroup;
+			children = (
+				BE52B6AB1F92ECE5001A476D /* OsmondRC */,
+				BE52B6C01F92ECE5001A476D /* OsmondRCTests */,
+				BE52B6CB1F92ECE5001A476D /* OsmondRCUITests */,
+				BE52B6AA1F92ECE5001A476D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE52B6AA1F92ECE5001A476D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE52B6A91F92ECE5001A476D /* OsmondRC.app */,
+				BE52B6BD1F92ECE5001A476D /* OsmondRCTests.xctest */,
+				BE52B6C81F92ECE5001A476D /* OsmondRCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE52B6AB1F92ECE5001A476D /* OsmondRC */ = {
+			isa = PBXGroup;
+			children = (
+				BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */,
+				BE52B6AE1F92ECE5001A476D /* ViewController.swift */,
+				BE52B6B01F92ECE5001A476D /* Main.storyboard */,
+				BE52B6B31F92ECE5001A476D /* Assets.xcassets */,
+				BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */,
+				BE52B6B81F92ECE5001A476D /* Info.plist */,
+			);
+			path = OsmondRC;
+			sourceTree = "<group>";
+		};
+		BE52B6C01F92ECE5001A476D /* OsmondRCTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE52B6C11F92ECE5001A476D /* OsmondRCTests.swift */,
+				BE52B6C31F92ECE5001A476D /* Info.plist */,
+			);
+			path = OsmondRCTests;
+			sourceTree = "<group>";
+		};
+		BE52B6CB1F92ECE5001A476D /* OsmondRCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */,
+				BE52B6CE1F92ECE5001A476D /* Info.plist */,
+			);
+			path = OsmondRCUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE52B6A81F92ECE5001A476D /* OsmondRC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE52B6D11F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRC" */;
+			buildPhases = (
+				BE52B6A51F92ECE5001A476D /* Sources */,
+				BE52B6A61F92ECE5001A476D /* Frameworks */,
+				BE52B6A71F92ECE5001A476D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OsmondRC;
+			productName = OsmondRC;
+			productReference = BE52B6A91F92ECE5001A476D /* OsmondRC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE52B6BC1F92ECE5001A476D /* OsmondRCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE52B6D41F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRCTests" */;
+			buildPhases = (
+				BE52B6B91F92ECE5001A476D /* Sources */,
+				BE52B6BA1F92ECE5001A476D /* Frameworks */,
+				BE52B6BB1F92ECE5001A476D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE52B6BF1F92ECE5001A476D /* PBXTargetDependency */,
+			);
+			name = OsmondRCTests;
+			productName = OsmondRCTests;
+			productReference = BE52B6BD1F92ECE5001A476D /* OsmondRCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE52B6C71F92ECE5001A476D /* OsmondRCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE52B6D71F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRCUITests" */;
+			buildPhases = (
+				BE52B6C41F92ECE5001A476D /* Sources */,
+				BE52B6C51F92ECE5001A476D /* Frameworks */,
+				BE52B6C61F92ECE5001A476D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE52B6CA1F92ECE5001A476D /* PBXTargetDependency */,
+			);
+			name = OsmondRCUITests;
+			productName = OsmondRCUITests;
+			productReference = BE52B6C81F92ECE5001A476D /* OsmondRCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE52B6A11F92ECE5001A476D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Will Bishop";
+				TargetAttributes = {
+					BE52B6A81F92ECE5001A476D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					BE52B6BC1F92ECE5001A476D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE52B6A81F92ECE5001A476D;
+					};
+					BE52B6C71F92ECE5001A476D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE52B6A81F92ECE5001A476D;
+					};
+				};
+			};
+			buildConfigurationList = BE52B6A41F92ECE5001A476D /* Build configuration list for PBXProject "OsmondRC" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE52B6A01F92ECE5001A476D;
+			productRefGroup = BE52B6AA1F92ECE5001A476D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE52B6A81F92ECE5001A476D /* OsmondRC */,
+				BE52B6BC1F92ECE5001A476D /* OsmondRCTests */,
+				BE52B6C71F92ECE5001A476D /* OsmondRCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE52B6A71F92ECE5001A476D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE52B6B71F92ECE5001A476D /* LaunchScreen.storyboard in Resources */,
+				BE52B6B41F92ECE5001A476D /* Assets.xcassets in Resources */,
+				BE52B6B21F92ECE5001A476D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE52B6BB1F92ECE5001A476D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE52B6C61F92ECE5001A476D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE52B6A51F92ECE5001A476D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
+				BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE52B6B91F92ECE5001A476D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE52B6C21F92ECE5001A476D /* OsmondRCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE52B6C41F92ECE5001A476D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE52B6CD1F92ECE5001A476D /* OsmondRCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE52B6BF1F92ECE5001A476D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE52B6A81F92ECE5001A476D /* OsmondRC */;
+			targetProxy = BE52B6BE1F92ECE5001A476D /* PBXContainerItemProxy */;
+		};
+		BE52B6CA1F92ECE5001A476D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE52B6A81F92ECE5001A476D /* OsmondRC */;
+			targetProxy = BE52B6C91F92ECE5001A476D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE52B6B01F92ECE5001A476D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE52B6B11F92ECE5001A476D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE52B6B61F92ECE5001A476D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE52B6CF1F92ECE5001A476D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE52B6D01F92ECE5001A476D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE52B6D21F92ECE5001A476D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6K4D5R5JQ;
+				INFOPLIST_FILE = OsmondRC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE52B6D31F92ECE5001A476D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6K4D5R5JQ;
+				INFOPLIST_FILE = OsmondRC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BE52B6D51F92ECE5001A476D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6K4D5R5JQ;
+				INFOPLIST_FILE = OsmondRCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OsmondRC.app/OsmondRC";
+			};
+			name = Debug;
+		};
+		BE52B6D61F92ECE5001A476D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6K4D5R5JQ;
+				INFOPLIST_FILE = OsmondRCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OsmondRC.app/OsmondRC";
+			};
+			name = Release;
+		};
+		BE52B6D81F92ECE5001A476D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6K4D5R5JQ;
+				INFOPLIST_FILE = OsmondRCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OsmondRC;
+			};
+			name = Debug;
+		};
+		BE52B6D91F92ECE5001A476D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6K4D5R5JQ;
+				INFOPLIST_FILE = OsmondRCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OsmondRC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE52B6A41F92ECE5001A476D /* Build configuration list for PBXProject "OsmondRC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE52B6CF1F92ECE5001A476D /* Debug */,
+				BE52B6D01F92ECE5001A476D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE52B6D11F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE52B6D21F92ECE5001A476D /* Debug */,
+				BE52B6D31F92ECE5001A476D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE52B6D41F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE52B6D51F92ECE5001A476D /* Debug */,
+				BE52B6D61F92ECE5001A476D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE52B6D71F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE52B6D81F92ECE5001A476D /* Debug */,
+				BE52B6D91F92ECE5001A476D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE52B6A11F92ECE5001A476D /* Project object */;
+}
