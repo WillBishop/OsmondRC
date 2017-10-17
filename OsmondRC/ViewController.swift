@@ -19,7 +19,6 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupNavBar()
 		classTable.separatorColor = UIColor.clear
 		// Do any additional setup after loading the view, typically from a nib.
 		classTable.delegate = self
@@ -28,6 +27,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 	}
 	override func viewDidAppear(_ animated: Bool) {
+		setupNavBar()
 		let bgColor = classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor
 		self.navigationController?.navigationBar.barTintColor = bgColor
 		view.backgroundColor = bgColor
@@ -59,6 +59,9 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 		// add button shift to the side
 		navigationItem.rightBarButtonItem = suggestButtonItem
+		
+		self.tabBarController?.tabBar.barTintColor = UIColor(red:0.93, green:0.94, blue:0.95, alpha:1.00)
+		self.tabBarController?.tabBar.tintColor = UIColor.black
 	}
 	@objc func selectedProfile(){
 		print("Go")
