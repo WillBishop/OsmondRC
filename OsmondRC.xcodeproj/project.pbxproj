@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA6FC7FBB40A40011A7FD0A /* Pods_OsmondRCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9192B3E330BFAD9D580FA8B8 /* Pods_OsmondRCUITests.framework */; };
+		B97E6E8632626907DE49400E /* Pods_OsmondRCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0553C600B276F1BE0E5D0B11 /* Pods_OsmondRCTests.framework */; };
+		BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE103B5E1F959D21002DFD50 /* classViewController.swift */; };
 		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
 		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
 		BE52B6B21F92ECE5001A476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B01F92ECE5001A476D /* Main.storyboard */; };
@@ -14,6 +17,9 @@
 		BE52B6B71F92ECE5001A476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */; };
 		BE52B6C21F92ECE5001A476D /* OsmondRCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6C11F92ECE5001A476D /* OsmondRCTests.swift */; };
 		BE52B6CD1F92ECE5001A476D /* OsmondRCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */; };
+		BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6DA1F92ED12001A476D /* Extensions.swift */; };
+		BEABCF661F95811000B01D93 /* Stirling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABCF651F95811000B01D93 /* Stirling.swift */; };
+		F8F5A09B20CE43B7B70A13BE /* Pods_OsmondRC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87DF1D58323494AADF4ED2D4 /* Pods_OsmondRC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0553C600B276F1BE0E5D0B11 /* Pods_OsmondRCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsmondRCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFE85853656C14428694137 /* Pods-OsmondRCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRCUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRCUITests/Pods-OsmondRCUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E15E2725E18934D646474CC /* Pods-OsmondRCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRCTests/Pods-OsmondRCTests.release.xcconfig"; sourceTree = "<group>"; };
+		87DF1D58323494AADF4ED2D4 /* Pods_OsmondRC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsmondRC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		916087DE06DEF231C032D8F7 /* Pods-OsmondRCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRCUITests/Pods-OsmondRCUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9192B3E330BFAD9D580FA8B8 /* Pods_OsmondRCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsmondRCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BF08BD862B5C4F4A038AC0 /* Pods-OsmondRC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC.debug.xcconfig"; sourceTree = "<group>"; };
+		BE103B5E1F959D21002DFD50 /* classViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classViewController.swift; sourceTree = "<group>"; };
 		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE52B6AE1F92ECE5001A476D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +61,10 @@
 		BE52B6C81F92ECE5001A476D /* OsmondRCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OsmondRCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsmondRCUITests.swift; sourceTree = "<group>"; };
 		BE52B6CE1F92ECE5001A476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE52B6DA1F92ED12001A476D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BEABCF651F95811000B01D93 /* Stirling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stirling.swift; sourceTree = "<group>"; };
+		D9E3EF34289FBAFF44888FEB /* Pods-OsmondRC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRC.release.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC.release.xcconfig"; sourceTree = "<group>"; };
+		FC4C4866983097EDF7464FAB /* Pods-OsmondRCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRCTests/Pods-OsmondRCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F5A09B20CE43B7B70A13BE /* Pods_OsmondRC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97E6E8632626907DE49400E /* Pods_OsmondRCTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA6FC7FBB40A40011A7FD0A /* Pods_OsmondRCUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6771735ECDDDD0AC6EB6799C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93BF08BD862B5C4F4A038AC0 /* Pods-OsmondRC.debug.xcconfig */,
+				D9E3EF34289FBAFF44888FEB /* Pods-OsmondRC.release.xcconfig */,
+				FC4C4866983097EDF7464FAB /* Pods-OsmondRCTests.debug.xcconfig */,
+				2E15E2725E18934D646474CC /* Pods-OsmondRCTests.release.xcconfig */,
+				916087DE06DEF231C032D8F7 /* Pods-OsmondRCUITests.debug.xcconfig */,
+				2BFE85853656C14428694137 /* Pods-OsmondRCUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE52B6A01F92ECE5001A476D = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +115,8 @@
 				BE52B6C01F92ECE5001A476D /* OsmondRCTests */,
 				BE52B6CB1F92ECE5001A476D /* OsmondRCUITests */,
 				BE52B6AA1F92ECE5001A476D /* Products */,
+				6771735ECDDDD0AC6EB6799C /* Pods */,
+				EFEFDF4C843FB40473F953FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +135,13 @@
 			children = (
 				BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */,
 				BE52B6AE1F92ECE5001A476D /* ViewController.swift */,
+				BE103B5E1F959D21002DFD50 /* classViewController.swift */,
 				BE52B6B01F92ECE5001A476D /* Main.storyboard */,
 				BE52B6B31F92ECE5001A476D /* Assets.xcassets */,
 				BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */,
 				BE52B6B81F92ECE5001A476D /* Info.plist */,
+				BE52B6DA1F92ED12001A476D /* Extensions.swift */,
+				BEABCF651F95811000B01D93 /* Stirling.swift */,
 			);
 			path = OsmondRC;
 			sourceTree = "<group>";
@@ -125,6 +164,16 @@
 			path = OsmondRCUITests;
 			sourceTree = "<group>";
 		};
+		EFEFDF4C843FB40473F953FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87DF1D58323494AADF4ED2D4 /* Pods_OsmondRC.framework */,
+				0553C600B276F1BE0E5D0B11 /* Pods_OsmondRCTests.framework */,
+				9192B3E330BFAD9D580FA8B8 /* Pods_OsmondRCUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE52B6D11F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRC" */;
 			buildPhases = (
+				1CD819C2325F174A3033BD97 /* [CP] Check Pods Manifest.lock */,
 				BE52B6A51F92ECE5001A476D /* Sources */,
 				BE52B6A61F92ECE5001A476D /* Frameworks */,
 				BE52B6A71F92ECE5001A476D /* Resources */,
+				6F7F108A150BB2336842D321 /* [CP] Embed Pods Frameworks */,
+				0B844C5AF04F7248B7FEA321 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE52B6D41F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRCTests" */;
 			buildPhases = (
+				D983B946B5E2D9AD9E491447 /* [CP] Check Pods Manifest.lock */,
 				BE52B6B91F92ECE5001A476D /* Sources */,
 				BE52B6BA1F92ECE5001A476D /* Frameworks */,
 				BE52B6BB1F92ECE5001A476D /* Resources */,
+				9F40830763E078BABBCA7723 /* [CP] Embed Pods Frameworks */,
+				8489E53D5331ABF8518FF805 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE52B6D71F92ECE5001A476D /* Build configuration list for PBXNativeTarget "OsmondRCUITests" */;
 			buildPhases = (
+				434070756792D5624051B32A /* [CP] Check Pods Manifest.lock */,
 				BE52B6C41F92ECE5001A476D /* Sources */,
 				BE52B6C51F92ECE5001A476D /* Frameworks */,
 				BE52B6C61F92ECE5001A476D /* Resources */,
+				7BBF96919E93CCC86BC270EA /* [CP] Embed Pods Frameworks */,
+				02EC15B280F7B7A502D8E4D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +312,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02EC15B280F7B7A502D8E4D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRCUITests/Pods-OsmondRCUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B844C5AF04F7248B7FEA321 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1CD819C2325F174A3033BD97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OsmondRC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		434070756792D5624051B32A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OsmondRCUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F7F108A150BB2336842D321 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BBF96919E93CCC86BC270EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRCUITests/Pods-OsmondRCUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8489E53D5331ABF8518FF805 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRCTests/Pods-OsmondRCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F40830763E078BABBCA7723 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRCTests/Pods-OsmondRCTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D983B946B5E2D9AD9E491447 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OsmondRCTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE52B6A51F92ECE5001A476D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
+				BEABCF661F95811000B01D93 /* Stirling.swift in Sources */,
+				BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */,
+				BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */,
 				BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,11 +637,13 @@
 		};
 		BE52B6D21F92ECE5001A476D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93BF08BD862B5C4F4A038AC0 /* Pods-OsmondRC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6K4D5R5JQ;
 				INFOPLIST_FILE = OsmondRC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,11 +654,13 @@
 		};
 		BE52B6D31F92ECE5001A476D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E3EF34289FBAFF44888FEB /* Pods-OsmondRC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6K4D5R5JQ;
 				INFOPLIST_FILE = OsmondRC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,12 +671,14 @@
 		};
 		BE52B6D51F92ECE5001A476D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC4C4866983097EDF7464FAB /* Pods-OsmondRCTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6K4D5R5JQ;
 				INFOPLIST_FILE = OsmondRCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,12 +690,14 @@
 		};
 		BE52B6D61F92ECE5001A476D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E15E2725E18934D646474CC /* Pods-OsmondRCTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6K4D5R5JQ;
 				INFOPLIST_FILE = OsmondRCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,11 +709,13 @@
 		};
 		BE52B6D81F92ECE5001A476D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 916087DE06DEF231C032D8F7 /* Pods-OsmondRCUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6K4D5R5JQ;
 				INFOPLIST_FILE = OsmondRCUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,11 +727,13 @@
 		};
 		BE52B6D91F92ECE5001A476D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BFE85853656C14428694137 /* Pods-OsmondRCUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6K4D5R5JQ;
 				INFOPLIST_FILE = OsmondRCUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
