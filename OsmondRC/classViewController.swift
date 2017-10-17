@@ -19,7 +19,7 @@ class classViewController: UIViewController, UIGestureRecognizerDelegate, UIView
 		})
 		self.navigationController?.transitioningDelegate = self
 		let selectedClass = UserDefaults().object(forKey: "selectedClass") as! [String: String]
-
+		navigationController?.navigationItem.largeTitleDisplayMode = .always
 		navigationItem.title = selectedClass["className"]
 		self.view.backgroundColor = UserDefaults().colorForKey(key: "selectedDarkColor")
 		let length = selectedClass["className"]?.count

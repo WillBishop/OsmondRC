@@ -18,16 +18,10 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	let darkColors = UIColor.flatColors().darkColorRainbow
 	let sampleData = [
 		[
-			"classTime": "8:45 AM",
+			"classTime": "9:50 AM",
 			"className": "Home Group",
 			"classTeacher": "Damon Smith",
 			"classRoom": "2FT03"
-		],
-		[
-			"classTime": "9:00 AM",
-			"className": "Health and PE",
-			"classTeacher": "Lalita Lopez",
-			"classRoom": "2TR01"
 		],
 		[
 			"classTime": "10:00 AM",
@@ -49,7 +43,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		],
 		[
 			"classTime": "2:05 PM",
-			"className": "Dramatic Presentation",
+			"className": "Dramamatic Presentation",
 			"classTeacher": "Christine Mason",
 			"classRoom": "1DM01"
 		]
@@ -71,7 +65,8 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		let bgColor = classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor
 		self.navigationController?.navigationBar.barTintColor = bgColor
 		view.backgroundColor = bgColor
-		
+		navigationController?.navigationItem.largeTitleDisplayMode = .always
+
 		print(self.navigationController?.navigationBar.largeTitleTextAttributes)
 		
 		classTable.backgroundColor = bgColor
@@ -116,7 +111,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		return sampleData.count
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 551 / CGFloat(sampleData.count)
+		return classTable.bounds.height / CGFloat(sampleData.count)
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = classTable.dequeueReusableCell(withIdentifier: "classCellReuse") as? classCell
@@ -135,14 +130,18 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let vrigerg = storyboard?.instantiateViewController(withIdentifier: "classView")
-		self.navigationController?.pushViewController(vrigerg!, animated: true)
+		let classView = storyboard?.instantiateViewController(withIdentifier: "classView")
+		self.navigationController?.pushViewController(classView!, animated: true)
+		
+		let backItem = UIBarButtonItem()
+		let weekday = Calendar.current.component(.weekday, from: Date())
+		backItem.title = days[weekday - 1]
+		navigationItem.backBarButtonItem = backItem
 		let color = classTable.cellForRow(at: indexPath) as? classCell
 		
 		UserDefaults().setColor(color: color?.backgroundColor, forKey: "selectedColor")
 		UserDefaults().setColor(color: color?.darkColor, forKey: "selectedDarkColor")
 		UserDefaults().set(sampleData[indexPath.row], forKey: "selectedClass")
-		print(sampleData[indexPath.row])
 		classTable.deselectRow(at: indexPath, animated: true)
 	}
 }
