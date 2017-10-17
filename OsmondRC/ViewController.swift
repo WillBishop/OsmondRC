@@ -16,6 +16,44 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 	let colors = UIColor.flatColors().flatColorRainbow
 	let darkColors = UIColor.flatColors().darkColorRainbow
+	let sampleData = [
+		[
+			"classTime": "8:45 AM",
+			"className": "Home Group",
+			"classTeacher": "Damon Smith",
+			"classRoom": "2FT03"
+		],
+		[
+			"classTime": "9:00 AM",
+			"className": "Health and PE",
+			"classTeacher": "Lalita Lopez",
+			"classRoom": "2TR01"
+		],
+		[
+			"classTime": "10:00 AM",
+			"className": "History",
+			"classTeacher": "Gudrun Finos",
+			"classRoom": "3HS03"
+		],
+		[
+			"classTime": "11:25 AM",
+			"className": "English",
+			"classTeacher": "Robert Kretschmer",
+			"classRoom": "2FT03"
+		],
+		[
+			"classTime": "12:15 PM",
+			"className": "Geography",
+			"classTeacher": "Andrianna Psalios",
+			"classRoom": "3HS05"
+		],
+		[
+			"classTime": "2:05 PM",
+			"className": "Dramatic Presentation",
+			"classTeacher": "Christine Mason",
+			"classRoom": "1DM01"
+		]
+		]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,7 +61,9 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		// Do any additional setup after loading the view, typically from a nib.
 		classTable.delegate = self
 		classTable.dataSource = self
+		
 		classTable.tableFooterView = UIView()
+		
 		
 	}
 	override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +71,9 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		let bgColor = classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor
 		self.navigationController?.navigationBar.barTintColor = bgColor
 		view.backgroundColor = bgColor
+		
+		print(self.navigationController?.navigationBar.largeTitleTextAttributes)
+		
 		classTable.backgroundColor = bgColor
 		navigationController?.navigationBar.backgroundColor = bgColor
 		UserDefaults().setColor(color: classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor, forKey: "todayColor")
@@ -60,7 +103,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		// add button shift to the side
 		navigationItem.rightBarButtonItem = suggestButtonItem
 		
-		self.tabBarController?.tabBar.barTintColor = UIColor(red:0.93, green:0.94, blue:0.95, alpha:1.00)
+		self.tabBarController?.tabBar.barTintColor = UserDefaults().colorForKey(key: "todayColor")
 		self.tabBarController?.tabBar.tintColor = UIColor.black
 	}
 	@objc func selectedProfile(){
@@ -70,19 +113,21 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		return 1
 	}
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 7
+		return sampleData.count
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 70.0
+		return 551 / CGFloat(sampleData.count)
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = classTable.dequeueReusableCell(withIdentifier: "classCellReuse") as? classCell
 		cell?.backgroundColor = colors[indexPath.row]
 		cell?.darkColor = darkColors[indexPath.row]
-		cell?.classRoom = "2FT03"
-		cell?.classTime = "8:45 AM - 9:00 AM"
-		cell?.classTeacher = "Damon Smith"
-		cell?.className = "Home Group"
+		let info = sampleData[indexPath.row]
+		
+		cell?.classRoom = info["classRoom"]!
+		cell?.classTime = info["classTime"]!
+		cell?.classTeacher = info["classTeacher"]!
+		cell?.className = info["className"]!
 		cell?.update()
 		
 		
@@ -96,6 +141,8 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 		UserDefaults().setColor(color: color?.backgroundColor, forKey: "selectedColor")
 		UserDefaults().setColor(color: color?.darkColor, forKey: "selectedDarkColor")
+		UserDefaults().set(sampleData[indexPath.row], forKey: "selectedClass")
+		print(sampleData[indexPath.row])
 		classTable.deselectRow(at: indexPath, animated: true)
 	}
 }
