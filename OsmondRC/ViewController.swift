@@ -12,43 +12,26 @@ import KeychainSwift
 class todayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var classTable: UITableView!
+	var selectedRow = IndexPath()
 	
 	let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 	let colors = UIColor.flatColors().flatColorRainbow
 	let darkColors = UIColor.flatColors().darkColorRainbow
-	let sampleData = [
-		[
-			"classTime": "9:50 AM",
-			"className": "Home Group",
-			"classTeacher": "Damon Smith",
-			"classRoom": "2FT03"
-		],
-		[
-			"classTime": "10:00 AM",
-			"className": "History",
-			"classTeacher": "Gudrun Finos",
-			"classRoom": "3HS03"
-		],
-		[
-			"classTime": "11:25 AM",
-			"className": "English",
-			"classTeacher": "Robert Kretschmer",
-			"classRoom": "2FT03"
-		],
-		[
-			"classTime": "12:15 PM",
-			"className": "Geography",
-			"classTeacher": "Andrianna Psalios",
-			"classRoom": "3HS05"
-		],
-		[
-			"classTime": "2:05 PM",
-			"className": "Dramamatic Presentation",
-			"classTeacher": "Christine Mason",
-			"classRoom": "1DM01"
-		]
-		]
+	var dailyClasses = [dailyClass]()
 	
+	override func viewWillAppear(_ animated: Bool) {
+		if let exisitingData = UserDefaults.standard.object(forKey: "dailyClasses") as? Data{
+			
+			//Data Exisits
+			let decoder = JSONDecoder()
+			if let dailyClass = try? decoder.decode([dailyClass].self, from: exisitingData) as [dailyClass]{
+					dailyClasses = dailyClass
+			}
+			
+		} else{
+			print("Wouldn't let")
+		}
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		classTable.separatorColor = UIColor.clear
@@ -57,7 +40,24 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		classTable.dataSource = self
 		
 		classTable.tableFooterView = UIView()
+		self.automaticallyAdjustsScrollViewInsets = false
 		
+		UIGraphicsEndImageContext()
+		Stirling.classes().getDaily(completionHandler: {result in
+			self.dailyClasses.removeAll()
+			for (_, element) in result.enumerated(){
+				self.dailyClasses.append(element)
+				self.classTable.reloadData()
+				print("done")
+
+
+			}
+			let encoder = JSONEncoder()
+			
+			if let encoded = try? encoder.encode(result){
+				UserDefaults().set(encoded, forKey: "dailyClasses")
+			}
+		})
 		
 	}
 	override func viewDidAppear(_ animated: Bool) {
@@ -66,8 +66,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		self.navigationController?.navigationBar.barTintColor = bgColor
 		view.backgroundColor = bgColor
 		navigationController?.navigationItem.largeTitleDisplayMode = .always
-
-		print(self.navigationController?.navigationBar.largeTitleTextAttributes)
+		self.tabBarController?.tabBar.barTintColor = UIColor.white
 		
 		classTable.backgroundColor = bgColor
 		navigationController?.navigationBar.backgroundColor = bgColor
@@ -79,9 +78,10 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		let weekday = Calendar.current.component(.weekday, from: Date())
 		navigationItem.title = days[weekday - 1] //-1 Because array starts at 0
 		let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
-		navigationController?.navigationBar.prefersLargeTitles = true
+		//navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
 		navigationController?.navigationBar.shadowImage = UIImage()
+		
 		let suggestImage  = UIImage(named: "profilePicture")!.withRenderingMode(.alwaysOriginal)
 		let suggestButton = UIButton(frame: CGRect(x:0, y:0, width:40, height:40))
 		suggestButton.setBackgroundImage(suggestImage, for: .normal)
@@ -98,8 +98,6 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		// add button shift to the side
 		navigationItem.rightBarButtonItem = suggestButtonItem
 		
-		self.tabBarController?.tabBar.barTintColor = UserDefaults().colorForKey(key: "todayColor")
-		self.tabBarController?.tabBar.tintColor = UIColor.black
 	}
 	@objc func selectedProfile(){
 		print("Go")
@@ -108,21 +106,23 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		return 1
 	}
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return sampleData.count
+		return dailyClasses.count
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return classTable.bounds.height / CGFloat(sampleData.count)
+		return classTable.bounds.height / CGFloat(dailyClasses.count)
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = classTable.dequeueReusableCell(withIdentifier: "classCellReuse") as? classCell
 		cell?.backgroundColor = colors[indexPath.row]
 		cell?.darkColor = darkColors[indexPath.row]
-		let info = sampleData[indexPath.row]
+		let info = dailyClasses[indexPath.row]
 		
-		cell?.classRoom = info["classRoom"]!
-		cell?.classTime = info["classTime"]!
-		cell?.classTeacher = info["classTeacher"]!
-		cell?.className = info["className"]!
+		cell?.classRoom = info.location
+		cell?.classTime = "\(info.startDateTime["time"]!) - \(info.endDateTime["time"]!) "
+		cell?.classTeacher = "Placeholder"
+		cell?.className = info.title
+								.replacingOccurrences(of: "10 ", with: "")
+								.replacingOccurrences(of: " Lesson", with: "")
 		cell?.update()
 		
 		
@@ -141,8 +141,14 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 		UserDefaults().setColor(color: color?.backgroundColor, forKey: "selectedColor")
 		UserDefaults().setColor(color: color?.darkColor, forKey: "selectedDarkColor")
-		UserDefaults().set(sampleData[indexPath.row], forKey: "selectedClass")
-		classTable.deselectRow(at: indexPath, animated: true)
+		let encoder = JSONEncoder()
+		if let encoded = try? encoder.encode(dailyClasses[indexPath.row]){
+			UserDefaults().set(encoded, forKey: "selectedClass")
+		}
+		selectedRow = indexPath
+	}
+	override func viewDidDisappear(_ animated: Bool) {
+		classTable.deselectRow(at: selectedRow, animated: true)
 	}
 }
 

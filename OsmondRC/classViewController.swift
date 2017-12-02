@@ -13,19 +13,30 @@ class classViewController: UIViewController, UIGestureRecognizerDelegate, UIView
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.navigationController?.navigationBar.barTintColor = UserDefaults().colorForKey(key: "selectedColor")
-		UIView.animate(withDuration: 5.0, animations: {
-			self.tabBarController?.tabBar.barTintColor = UserDefaults().colorForKey(key: "selectedColor")
-			
-		})
+		
 		self.navigationController?.transitioningDelegate = self
-		let selectedClass = UserDefaults().object(forKey: "selectedClass") as! [String: String]
-		navigationController?.navigationItem.largeTitleDisplayMode = .always
-		navigationItem.title = selectedClass["className"]
-		self.view.backgroundColor = UserDefaults().colorForKey(key: "selectedDarkColor")
-		let length = selectedClass["className"]?.count
-		if length! > 18{
-			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 28.0), NSAttributedStringKey.foregroundColor : UIColor.white]
+		let decoder = JSONDecoder()
+		var selectedClass = dailyClass()
+		
+		if let decodable = UserDefaults().value(forKey: "selectedClass") as? Data{
+			if let dailyClasses = try? decoder.decode(dailyClass.self, from: decodable) as dailyClass{
+				selectedClass = dailyClasses
+			}
 		}
+		
+		navigationController?.navigationItem.largeTitleDisplayMode = .always
+		navigationItem.title = selectedClass.title
+											.replacingOccurrences(of: "10 ", with: "")
+											.replacingOccurrences(of: " Lesson", with: "")
+		self.view.backgroundColor = UserDefaults().colorForKey(key: "selectedDarkColor")
+		
+		//Setup Nav-bar large title size per device
+		let length = selectedClass.title.count
+		
+
+//		if length > 18{
+//			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 28.0), NSAttributedStringKey.foregroundColor : UIColor.white]
+//		}
 		
 		
         // Do any additional setup after loading the view.

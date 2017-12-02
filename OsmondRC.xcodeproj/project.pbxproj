@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5EA6FC7FBB40A40011A7FD0A /* Pods_OsmondRCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9192B3E330BFAD9D580FA8B8 /* Pods_OsmondRCUITests.framework */; };
 		B97E6E8632626907DE49400E /* Pods_OsmondRCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0553C600B276F1BE0E5D0B11 /* Pods_OsmondRCTests.framework */; };
+		BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */; };
 		BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE103B5E1F959D21002DFD50 /* classViewController.swift */; };
 		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
 		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
@@ -18,7 +19,11 @@
 		BE52B6C21F92ECE5001A476D /* OsmondRCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6C11F92ECE5001A476D /* OsmondRCTests.swift */; };
 		BE52B6CD1F92ECE5001A476D /* OsmondRCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */; };
 		BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6DA1F92ED12001A476D /* Extensions.swift */; };
+		BE979ED21FB6A3CB00F64C55 /* onboardTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */; };
 		BEABCF661F95811000B01D93 /* Stirling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABCF651F95811000B01D93 /* Stirling.swift */; };
+		BEBAE7BC1F97642E0044B8BC /* signInOut.png in Resources */ = {isa = PBXBuildFile; fileRef = BEBAE7BB1F97642E0044B8BC /* signInOut.png */; };
+		BEF0372D1FA483D400C38DB5 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0372C1FA483D400C38DB5 /* Onboard.storyboard */; };
+		BEF0372F1FA483F000C38DB5 /* onboardOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0372E1FA483F000C38DB5 /* onboardOneController.swift */; };
 		F8F5A09B20CE43B7B70A13BE /* Pods_OsmondRC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87DF1D58323494AADF4ED2D4 /* Pods_OsmondRC.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +52,7 @@
 		916087DE06DEF231C032D8F7 /* Pods-OsmondRCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRCUITests/Pods-OsmondRCUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9192B3E330BFAD9D580FA8B8 /* Pods_OsmondRCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsmondRCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BF08BD862B5C4F4A038AC0 /* Pods-OsmondRC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardPageController.swift; sourceTree = "<group>"; };
 		BE103B5E1F959D21002DFD50 /* classViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classViewController.swift; sourceTree = "<group>"; };
 		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +68,11 @@
 		BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsmondRCUITests.swift; sourceTree = "<group>"; };
 		BE52B6CE1F92ECE5001A476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE52B6DA1F92ED12001A476D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardTwoController.swift; sourceTree = "<group>"; };
 		BEABCF651F95811000B01D93 /* Stirling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stirling.swift; sourceTree = "<group>"; };
+		BEBAE7BB1F97642E0044B8BC /* signInOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signInOut.png; sourceTree = "<group>"; };
+		BEF0372C1FA483D400C38DB5 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		BEF0372E1FA483F000C38DB5 /* onboardOneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardOneController.swift; sourceTree = "<group>"; };
 		D9E3EF34289FBAFF44888FEB /* Pods-OsmondRC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRC.release.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC.release.xcconfig"; sourceTree = "<group>"; };
 		FC4C4866983097EDF7464FAB /* Pods-OsmondRCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRCTests/Pods-OsmondRCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,10 +148,12 @@
 				BE103B5E1F959D21002DFD50 /* classViewController.swift */,
 				BE52B6B01F92ECE5001A476D /* Main.storyboard */,
 				BE52B6B31F92ECE5001A476D /* Assets.xcassets */,
+				BEBAE7BB1F97642E0044B8BC /* signInOut.png */,
 				BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */,
 				BE52B6B81F92ECE5001A476D /* Info.plist */,
 				BE52B6DA1F92ED12001A476D /* Extensions.swift */,
 				BEABCF651F95811000B01D93 /* Stirling.swift */,
+				BEF037301FA483FF00C38DB5 /* Onboard */,
 			);
 			path = OsmondRC;
 			sourceTree = "<group>";
@@ -162,6 +174,17 @@
 				BE52B6CE1F92ECE5001A476D /* Info.plist */,
 			);
 			path = OsmondRCUITests;
+			sourceTree = "<group>";
+		};
+		BEF037301FA483FF00C38DB5 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				BEF0372C1FA483D400C38DB5 /* Onboard.storyboard */,
+				BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */,
+				BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */,
+				BEF0372E1FA483F000C38DB5 /* onboardOneController.swift */,
+			);
+			path = Onboard;
 			sourceTree = "<group>";
 		};
 		EFEFDF4C843FB40473F953FC /* Frameworks */ = {
@@ -290,8 +313,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEBAE7BC1F97642E0044B8BC /* signInOut.png in Resources */,
 				BE52B6B71F92ECE5001A476D /* LaunchScreen.storyboard in Resources */,
 				BE52B6B41F92ECE5001A476D /* Assets.xcassets in Resources */,
+				BEF0372D1FA483D400C38DB5 /* Onboard.storyboard in Resources */,
 				BE52B6B21F92ECE5001A476D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,11 +413,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -469,10 +496,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE979ED21FB6A3CB00F64C55 /* onboardTwoController.swift in Sources */,
+				BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */,
 				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
 				BEABCF661F95811000B01D93 /* Stirling.swift in Sources */,
 				BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */,
 				BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */,
+				BEF0372F1FA483F000C38DB5 /* onboardOneController.swift in Sources */,
 				BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
