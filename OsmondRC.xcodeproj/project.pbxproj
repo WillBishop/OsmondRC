@@ -11,6 +11,7 @@
 		B97E6E8632626907DE49400E /* Pods_OsmondRCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0553C600B276F1BE0E5D0B11 /* Pods_OsmondRCTests.framework */; };
 		BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */; };
 		BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE103B5E1F959D21002DFD50 /* classViewController.swift */; };
+		BE3A594C1FD2A51300454A2C /* accountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A594B1FD2A51300454A2C /* accountController.swift */; };
 		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
 		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
 		BE52B6B21F92ECE5001A476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B01F92ECE5001A476D /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		93BF08BD862B5C4F4A038AC0 /* Pods-OsmondRC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardPageController.swift; sourceTree = "<group>"; };
 		BE103B5E1F959D21002DFD50 /* classViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classViewController.swift; sourceTree = "<group>"; };
+		BE3A594B1FD2A51300454A2C /* accountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountController.swift; sourceTree = "<group>"; };
 		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE52B6AE1F92ECE5001A476D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		BE52B6A01F92ECE5001A476D = {
 			isa = PBXGroup;
 			children = (
+				BE3A594B1FD2A51300454A2C /* accountController.swift */,
 				BE52B6AB1F92ECE5001A476D /* OsmondRC */,
 				BE52B6C01F92ECE5001A476D /* OsmondRCTests */,
 				BE52B6CB1F92ECE5001A476D /* OsmondRCUITests */,
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE979ED21FB6A3CB00F64C55 /* onboardTwoController.swift in Sources */,
+				BE3A594C1FD2A51300454A2C /* accountController.swift in Sources */,
 				BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */,
 				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
 				BEABCF661F95811000B01D93 /* Stirling.swift in Sources */,

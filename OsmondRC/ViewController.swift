@@ -18,8 +18,14 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	let colors = UIColor.flatColors().flatColorRainbow
 	let darkColors = UIColor.flatColors().darkColorRainbow
 	var dailyClasses = [dailyClass]()
+	var profileImage = UIImage()
 	
 	override func viewWillAppear(_ animated: Bool) {
+		if let existingImage = UserDefaults.standard.object(forKey: "userImage") as? Data{
+			if let converted = UIImage(data: existingImage){
+				profileImage = converted
+			}
+		}
 		if let exisitingData = UserDefaults.standard.object(forKey: "dailyClasses") as? Data{
 			
 			//Data Exisits
@@ -31,6 +37,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		} else{
 			print("Wouldn't let")
 		}
+		
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,7 +48,6 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 		classTable.tableFooterView = UIView()
 		self.automaticallyAdjustsScrollViewInsets = false
-		
 		UIGraphicsEndImageContext()
 		Stirling.classes().getDaily(completionHandler: {result in
 			self.dailyClasses.removeAll()
@@ -51,11 +57,6 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 				print("done")
 
 
-			}
-			let encoder = JSONEncoder()
-			
-			if let encoded = try? encoder.encode(result){
-				UserDefaults().set(encoded, forKey: "dailyClasses")
 			}
 		})
 		
@@ -71,7 +72,11 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		classTable.backgroundColor = bgColor
 		navigationController?.navigationBar.backgroundColor = bgColor
 		UserDefaults().setColor(color: classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor, forKey: "todayColor")
-		
+		navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "signInOut").withRenderingMode(.alwaysOriginal)
+		Stirling.accounts().getProfilePicture(completionHandler: { image in
+			self.setupNavBar()
+			UserDefaults.standard.set(UIImagePNGRepresentation(image), forKey: "userImage")
+		})
 	}
 	
 	func setupNavBar(){
@@ -82,7 +87,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
 		navigationController?.navigationBar.shadowImage = UIImage()
 		
-		let suggestImage  = UIImage(named: "profilePicture")!.withRenderingMode(.alwaysOriginal)
+		let suggestImage  = profileImage
 		let suggestButton = UIButton(frame: CGRect(x:0, y:0, width:40, height:40))
 		suggestButton.setBackgroundImage(suggestImage, for: .normal)
 		suggestButton.addTarget(self, action: #selector(selectedProfile), for:.touchUpInside)
@@ -100,7 +105,8 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 	}
 	@objc func selectedProfile(){
-		print("Go")
+		let classView = storyboard?.instantiateViewController(withIdentifier: "accountView")
+		self.navigationController?.pushViewController(classView!, animated: true)
 	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -116,15 +122,13 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		cell?.backgroundColor = colors[indexPath.row]
 		cell?.darkColor = darkColors[indexPath.row]
 		let info = dailyClasses[indexPath.row]
-		
 		cell?.classRoom = info.location
 		cell?.classTime = "\(info.startDateTime["time"]!) - \(info.endDateTime["time"]!) "
-		cell?.classTeacher = "Placeholder"
+		cell?.classTeacher = info.teacher
 		cell?.className = info.title
 								.replacingOccurrences(of: "10 ", with: "")
 								.replacingOccurrences(of: " Lesson", with: "")
 		cell?.update()
-		
 		
 		return cell!
 	}

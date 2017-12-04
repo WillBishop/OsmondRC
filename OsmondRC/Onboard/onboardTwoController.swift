@@ -83,7 +83,6 @@ class onboardTwoController: UIViewController {
 			switch result{
 				
 			case true:
-				self.stopAnimating()
 				Stirling.accounts().login(username: self.usernameField.text?.lowercased(), password: self.passwordField.text)
 			case false:
 				self.stopAnimating()

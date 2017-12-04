@@ -38,6 +38,21 @@
             </objects>
             <point key="canvasLocation" x="-318" y="-28"/>
         </scene>
+        <!--Class View Controller-->
+        <scene sceneID="0hg-DI-Tn7">
+            <objects>
+                <viewController storyboardIdentifier="classView" id="t2H-vR-1s4" customClass="classViewController" customModule="OsmondRC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Wm-OY-fWT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tpn-hO-vT1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fk7-2Y-ZmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="88"/>
+        </scene>
         <!--Title-->
         <scene sceneID="Tgr-qN-BFv">
             <objects>
@@ -58,43 +73,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="102.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1DM01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-lM-Edr">
+                                                    <rect key="frame" x="345" y="41" width="53.333333333333314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:45 AM - 9:50 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-ez-CRz">
-                                                    <rect key="frame" x="14" y="64" width="152" height="20"/>
+                                                    <rect key="frame" x="21" y="64" width="152" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christine Mason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-ru-RCc">
-                                                    <rect key="frame" x="13.999999999999993" y="44" width="127.33333333333331" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Christine Mason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-ru-RCc">
+                                                    <rect key="frame" x="21" y="44" width="251" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dramatic Presentation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpq-oB-8J0">
-                                                    <rect key="frame" x="14.000000000000014" y="18" width="251.33333333333337" height="28"/>
+                                                    <rect key="frame" x="21.000000000000014" y="18" width="251.33333333333337" height="28"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1DM01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-lM-Edr">
-                                                    <rect key="frame" x="345" y="41" width="53.333333333333286" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Xpq-oB-8J0" firstAttribute="top" secondItem="kzG-wk-bcl" secondAttribute="top" constant="18" id="2LX-oM-Out"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="YHX-lM-Edr" secondAttribute="trailing" constant="1" id="58j-aU-LxB"/>
-                                                <constraint firstItem="Hlj-ru-RCc" firstAttribute="leading" secondItem="kzG-wk-bcl" secondAttribute="leading" constant="14" id="9tI-O7-mYw"/>
-                                                <constraint firstItem="qvc-ez-CRz" firstAttribute="leading" secondItem="kzG-wk-bcl" secondAttribute="leading" constant="14" id="AvF-iJ-jAX"/>
+                                                <constraint firstItem="Hlj-ru-RCc" firstAttribute="leading" secondItem="kzG-wk-bcl" secondAttribute="leading" constant="21" id="9tI-O7-mYw"/>
+                                                <constraint firstItem="qvc-ez-CRz" firstAttribute="leading" secondItem="kzG-wk-bcl" secondAttribute="leading" constant="21" id="AvF-iJ-jAX"/>
                                                 <constraint firstItem="qvc-ez-CRz" firstAttribute="top" secondItem="Hlj-ru-RCc" secondAttribute="bottom" id="OA6-0F-Ep6"/>
                                                 <constraint firstItem="YHX-lM-Edr" firstAttribute="top" secondItem="kzG-wk-bcl" secondAttribute="topMargin" constant="30" id="RVu-Ah-F3x"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="YHX-lM-Edr" secondAttribute="bottom" constant="30" id="WIQ-Qb-dBq"/>
-                                                <constraint firstItem="YHX-lM-Edr" firstAttribute="leading" secondItem="Hlj-ru-RCc" secondAttribute="trailing" constant="203.66666666666669" id="Z0T-LO-3sy"/>
+                                                <constraint firstItem="YHX-lM-Edr" firstAttribute="leading" secondItem="Hlj-ru-RCc" secondAttribute="trailing" constant="73" id="Z0T-LO-3sy"/>
                                                 <constraint firstItem="Hlj-ru-RCc" firstAttribute="top" secondItem="kzG-wk-bcl" secondAttribute="top" constant="44" id="btn-d8-i8c"/>
                                                 <constraint firstAttribute="bottom" secondItem="qvc-ez-CRz" secondAttribute="bottom" constant="18" id="oay-Mm-seU"/>
-                                                <constraint firstItem="Xpq-oB-8J0" firstAttribute="leading" secondItem="kzG-wk-bcl" secondAttribute="leading" constant="14" id="vr8-Zb-A5S"/>
+                                                <constraint firstItem="Xpq-oB-8J0" firstAttribute="leading" secondItem="kzG-wk-bcl" secondAttribute="leading" constant="21" id="vr8-Zb-A5S"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,20 +136,29 @@
             </objects>
             <point key="canvasLocation" x="839.13043478260875" y="88.043478260869577"/>
         </scene>
-        <!--Class View Controller-->
+        <!--Account Controller-->
         <scene sceneID="qPq-4X-mZH">
             <objects>
-                <viewController storyboardIdentifier="classView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yd7-QG-Ov7" customClass="classViewController" customModule="OsmondRC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yd7-QG-Ov7" customClass="accountController" customModule="OsmondRC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aow-YS-iP9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qu-bg-Y2H">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e7u-7a-f2K"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpu-wp-iLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="90"/>
+            <point key="canvasLocation" x="2424.6376811594205" y="87.228260869565219"/>
         </scene>
     </scenes>
 </document>

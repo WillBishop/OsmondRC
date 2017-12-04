@@ -45,8 +45,8 @@ class Stirling{
 		var school: String?
 		
 		init() {
-			username = keychain.get("stirlingUsername")
-			password = keychain.get("stirlingPassword")
+			username = keychain.get("accountName")
+			password = keychain.get("password")
 			school = keychain.get("stirlingEndpoint")
 		}
 		func createAccount(username: String?, password: String?, email: String?, school: String?, completionHandler: @escaping (String) -> ()) {
@@ -116,7 +116,14 @@ class Stirling{
 				KeychainSwift().set(username, forKey: "accountName")
 				KeychainSwift().set(password, forKey: "password")
 			}
-			loggedIn()
+			
+			classes().getDaily(completionHandler: {_ in
+				self.getProfilePicture(completionHandler: {_ in
+					self.loggedIn()
+				})
+			})
+			
+			
 			
 		}
 		func testCredentials(username: String?, password: String?, completionHandler: @escaping (_ result: Bool) -> Void){
@@ -125,7 +132,7 @@ class Stirling{
 					"accountName": username,
 					"password": password
 				]
-				Alamofire.request("https:/da.gihs.sa.edu.au/stirling/v3/accounts/validCredentials", method: .get, parameters: parameters)
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/accounts/validCredentials", method: .get, parameters: parameters)
 					.responseString { response in
 						if response.result.value?.range(of: "false") != nil{
 							completionHandler(false)
@@ -135,7 +142,7 @@ class Stirling{
 						}
 				}
 			} else{
-				print("Wouldn't let")
+				print("Wouldn't letttt")
 			}
 		}
 		func loggedIn() {//Switches user to logged in state.
@@ -145,6 +152,71 @@ class Stirling{
 			
 			let appDelegate =  UIApplication.shared.delegate as! AppDelegate
 			appDelegate.window?.rootViewController = mainController
+			getDisplayName(completionHandler: {_ in
+				self.getProfileBanner(completionHandler: {_ in})
+				
+			})
+		}
+		func getProfilePicture(completionHandler: @escaping (_ result: UIImage) -> Void){
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password
+				]
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/accounts/get/avatar", method: .get, parameters: parameters)
+					.responseData { response in
+						if let data = response.data{
+							let image = UIImage(data: data)
+							if let img = image{
+								UserDefaults.standard.set(UIImagePNGRepresentation(img), forKey: "userImage")
+								completionHandler(img)
+							} else {print("bad image")}
+						} else {
+							print("No go")
+						}
+				}
+			}
+		}
+		func getProfileBanner(completionHandler: @escaping (_ result: UIImage) -> Void){
+			if let username = username, let password = password{
+				print("Going")
+				let parameters = [
+					"accountName": username,
+					"password": password
+				]
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/accounts/get/banner", method: .get, parameters: parameters)
+					.responseData { response in
+						if let data = response.data{
+							let image = UIImage(data: data)
+							if let img = image{
+								UserDefaults.standard.set(UIImagePNGRepresentation(img), forKey: "userBanner")
+								completionHandler(img)
+							} else {print("bad image")}
+						} else {
+							print("No go")
+						}
+				}
+			} else{
+				print("wouldn't lettt")
+			}
+		}
+		func getDisplayName(completionHandler: @escaping (_ result: String) -> Void){
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password
+				]
+				
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/accounts/get/displayName", method: .get, parameters: parameters)
+					.responseString { response in
+						if let username = response.result.value{
+							UserDefaults.standard.set(username, forKey: "accountDisplayName")
+							completionHandler(username)
+						} else{
+							print("Wouldn't lett")
+						}
+				}
+			}
 		}
 	}
 	struct classes{
@@ -160,7 +232,7 @@ class Stirling{
 			let parameters = [
 				"accountName": username!,
 				"password": password!,
-				"date": "1/12/17"
+				"date": "1/11/17"
 			]
 			Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/classes/get/daily", method: .get, parameters: parameters)
 				.responseJSON { response in
@@ -181,32 +253,65 @@ class Stirling{
 								times[date!] = currentClass
 								classes.append(currentClass)
 							}
-						
 						} else {
 							print("Error during enumeration")
 							return
 						}
 						
 					}
-					var timeList = [Date]()
-					for (key, value) in times.enumerated(){
+					var timeList = [Date]() //Create an empty array that only stores dates
+					for (key, value) in times.enumerated(){ //For each key, value pair in times
 						
-						timeList.append(value.key)
+						timeList.append(value.key) //Unfortunately, the key from (key, value) and value.key are not the same
+						
 					}
-					timeList = timeList.sorted(by: { $0.compare($1) == .orderedAscending })
+					timeList = timeList.sorted(by: { $0.compare($1) == .orderedAscending }) //Sort it
 					classes.removeAll()
 					for (index, element) in timeList.enumerated(){
-						classes.append(times[element]!)
+						classes.append(times[element]!) //Add back to classes in order of their dates
+					}
+					let encoder = JSONEncoder()
+					
+					if let encoded = try? encoder.encode(classes){
+						UserDefaults().set(encoded, forKey: "dailyClasses")
 					}
 					completionHandler(classes)
 					
 					
 					//dailyClass(uuid: "8684f49f-ad16-4ffe-a9fd-1f54ea85d539", title: "10 Health and PE2H Lesson", desc: "Lesson on 1/12/2017", startDateTime: ["date": "1/12/2017", "time": "14:05"], endDateTime: ["date": "1/12/2017", "time": "15:25"], location: "2TR01")
-
+					
 			}
 		}
 	}
 }
+struct classNoteee: Codable{
+	var uuid: String
+	var title: String
+	var content: String
+	var postDateTime: [String: String]
+	
+	init?(_ json: [String: Any]){
+		guard let uuid = json["uuid"] as? String,
+			let title = json["title"] as? String,
+			let content = json["content"] as? String,
+			let postDateTime = json["postDateTime"] as? [String: String] else{
+				return nil
+		}
+		self.uuid = uuid
+		self.title = title
+		self.content = content
+		self.postDateTime = postDateTime
+	}
+	init(){
+		self.uuid = ""
+		self.title = ""
+		self.content = ""
+		self.postDateTime = ["": ""]
+	}
+}
+
+
+
 struct dailyClass: Codable{
 	var uuid: String
 	var title: String
@@ -214,31 +319,53 @@ struct dailyClass: Codable{
 	var startDateTime: [String: String]
 	var endDateTime: [String: String]
 	var location: String
+	var teacher: String
+	var classNote: classNoteee
 	
 	init?(_ json: [String: Any]){
-		guard let uuid = json["uuid"] as? String,
-			let title = json["title"] as? String,
-			let desc = json["desc"] as? String,
-			let startDateTime = json["startDateTime"] as? [String: String],
-			let endDateTime = json["endDateTime"] as? [String: String],
-			let location = json["location"] as? String else {
+		var localshit = classNoteee()
+		guard let uuid = json["classUuid"] as? String, //Guranteed Shit
+			let title = json["className"] as? String,
+			
+			let startDateTime = json["startTime"] as? [String: String],
+			let endDateTime = json["endTime"] as? [String: String],
+			let location = json["room"] as? String,
+			let teacher = json["teacher"] as? String
+			
+			
+			else {
 				return nil
 		}
+		
+		//Special optional shit
+		if let classNotee = json["classNote"] as? [String: Any]{
+			if let note = classNoteee(classNotee){
+				localshit = note
+				
+			}
+		} else {
+			self.classNote = classNoteee()
+		}
+		let desc = "PLACEHOLDER"
 		self.uuid = uuid
 		self.title = title
 		self.desc = desc
 		self.startDateTime = startDateTime
 		self.endDateTime = endDateTime
 		self.location = location
+		self.teacher = teacher
+		self.classNote = localshit
 		
 	}
 	init() {
 		self.uuid = "uuid"
 		self.title = "title"
-		self.desc = "desc"
+		self.desc = "description"
 		self.startDateTime = ["Start": "End"]
 		self.endDateTime = ["Start": "End"]
-		self.location = ""
+		self.location = "location"
+		self.teacher = "teacher"
+		self.classNote = classNoteee()
 	}
 	
 }
