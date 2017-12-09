@@ -12,6 +12,7 @@
 		BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */; };
 		BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE103B5E1F959D21002DFD50 /* classViewController.swift */; };
 		BE2FEB2D1FDBEA960052EA18 /* announcementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */; };
+		BE2FEB301FDC0E710052EA18 /* dataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FEB2F1FDC0E710052EA18 /* dataModels.swift */; };
 		BE3A594C1FD2A51300454A2C /* accountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A594B1FD2A51300454A2C /* accountController.swift */; };
 		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
 		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardPageController.swift; sourceTree = "<group>"; };
 		BE103B5E1F959D21002DFD50 /* classViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classViewController.swift; sourceTree = "<group>"; };
 		BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementViewController.swift; sourceTree = "<group>"; };
+		BE2FEB2F1FDC0E710052EA18 /* dataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModels.swift; sourceTree = "<group>"; };
 		BE3A594B1FD2A51300454A2C /* accountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountController.swift; sourceTree = "<group>"; };
 		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 		BE2FEB2E1FDC0DB60052EA18 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BE6C18F81FD9086E0006D98C /* navController.swift */,
+				BE3A594B1FD2A51300454A2C /* accountController.swift */,
 				BE52B6AE1F92ECE5001A476D /* ViewController.swift */,
 				BE103B5E1F959D21002DFD50 /* classViewController.swift */,
 				BE9244361FDBB2DF00E10632 /* announcementsController.swift */,
@@ -136,11 +140,34 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		BE2FEB311FDC0E910052EA18 /* Stirling */ = {
+			isa = PBXGroup;
+			children = (
+				BEABCF651F95811000B01D93 /* Stirling.swift */,
+				BE2FEB2F1FDC0E710052EA18 /* dataModels.swift */,
+			);
+			path = Stirling;
+			sourceTree = "<group>";
+		};
+		BE2FEB321FDC0EC00052EA18 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		BE2FEB331FDC0ECE0052EA18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE52B6DA1F92ED12001A476D /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BE52B6A01F92ECE5001A476D = {
 			isa = PBXGroup;
 			children = (
-				BE6C18F81FD9086E0006D98C /* navController.swift */,
-				BE3A594B1FD2A51300454A2C /* accountController.swift */,
 				BE52B6AB1F92ECE5001A476D /* OsmondRC */,
 				BE52B6C01F92ECE5001A476D /* OsmondRCTests */,
 				BE52B6CB1F92ECE5001A476D /* OsmondRCUITests */,
@@ -163,14 +190,13 @@
 		BE52B6AB1F92ECE5001A476D /* OsmondRC */ = {
 			isa = PBXGroup;
 			children = (
-				BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */,
+				BE2FEB321FDC0EC00052EA18 /* Delegates */,
+				BE2FEB331FDC0ECE0052EA18 /* Extensions */,
 				BEF037301FA483FF00C38DB5 /* Onboard */,
 				BE2FEB2E1FDC0DB60052EA18 /* Main */,
+				BE2FEB311FDC0E910052EA18 /* Stirling */,
 				BE52B6B31F92ECE5001A476D /* Assets.xcassets */,
-				BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */,
 				BE52B6B81F92ECE5001A476D /* Info.plist */,
-				BE52B6DA1F92ED12001A476D /* Extensions.swift */,
-				BEABCF651F95811000B01D93 /* Stirling.swift */,
 			);
 			path = OsmondRC;
 			sourceTree = "<group>";
@@ -196,6 +222,7 @@
 		BEF037301FA483FF00C38DB5 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
+				BE52B6B51F92ECE5001A476D /* LaunchScreen.storyboard */,
 				BEF0372C1FA483D400C38DB5 /* Onboard.storyboard */,
 				BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */,
 				BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */,
@@ -518,6 +545,7 @@
 				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
 				BEABCF661F95811000B01D93 /* Stirling.swift in Sources */,
 				BE6C18F91FD9086E0006D98C /* navController.swift in Sources */,
+				BE2FEB301FDC0E710052EA18 /* dataModels.swift in Sources */,
 				BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */,
 				BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */,
 				BEF0372F1FA483F000C38DB5 /* onboardOneController.swift in Sources */,
