@@ -126,7 +126,7 @@ class Stirling{
 			
 			
 		}
-		func testCredentials(username: String?, password: String?, completionHandler: @escaping (_ result: Bool) -> Void){
+		func testCredentials(username: String?, password: String?, shouldLogOut:Bool = false, completionHandler: @escaping (_ result: Bool) -> Void){
 			if let username = username, let password = password{
 				let parameters = [
 					"accountName": username,
@@ -136,6 +136,16 @@ class Stirling{
 					.responseString { response in
 						if response.result.value?.range(of: "false") != nil{
 							completionHandler(false)
+							if shouldLogOut{
+								UserDefaults.standard.set(false, forKey: "loggedIn")
+								let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+								//let mainController = storyboard.instantiateViewController(withIdentifier: "tabcontrollerforMain") as UIViewController
+								let mainController = storyboard.instantiateViewController(withIdentifier: "onboardPage") as! onboardPageController
+								
+								let appDelegate =  UIApplication.shared.delegate as! AppDelegate
+								appDelegate.window?.rootViewController = mainController
+								
+							}
 						}
 						if response.result.value?.range(of: "true") != nil{
 							completionHandler(true)
@@ -153,8 +163,9 @@ class Stirling{
 			let appDelegate =  UIApplication.shared.delegate as! AppDelegate
 			appDelegate.window?.rootViewController = mainController
 			getDisplayName(completionHandler: {_ in
-				self.getProfileBanner(completionHandler: {_ in})
-				
+				self.getProfileBanner(completionHandler: {_ in
+					
+				})
 			})
 		}
 		func getProfilePicture(completionHandler: @escaping (_ result: UIImage) -> Void){
@@ -179,7 +190,6 @@ class Stirling{
 		}
 		func getProfileBanner(completionHandler: @escaping (_ result: UIImage) -> Void){
 			if let username = username, let password = password{
-				print("Going")
 				let parameters = [
 					"accountName": username,
 					"password": password
@@ -232,7 +242,7 @@ class Stirling{
 			let parameters = [
 				"accountName": username!,
 				"password": password!,
-				"date": "1/11/17"
+				"date": "1/12/17"
 			]
 			Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/classes/get/daily", method: .get, parameters: parameters)
 				.responseJSON { response in
@@ -282,6 +292,84 @@ class Stirling{
 					
 			}
 		}
+		func getLatestNote(_ uuid: String, completionHandler: @escaping (_ result: classNoteee) -> Void){
+			
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password,
+					"classUuid": uuid
+				]
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/classes/get/notes", method: .get, parameters: parameters)
+					.responseJSON { response in
+						//print(response.result.value)
+						var times = [Date: classNoteee]()
+						let dateformatter = DateFormatter()
+						dateformatter.dateFormat = "d/M/yyyy, H:mm"
+						dateformatter.timeZone = TimeZone(abbreviation: "UTC")
+						if let value = response.result.value as? NSArray{
+							for (index, element) in value.enumerated(){
+								if let note = element as? [String: Any]{
+									
+									if let parsed = classNoteee(note){
+										let date = "\(parsed.postDateTime["date"]!), \(parsed.postDateTime["time"]!)"
+										let realdate = dateformatter.date(from: date)
+										times[realdate!] = parsed
+									}
+								}
+							}
+							var timeList = [Date]()
+							for (key, value) in times.enumerated(){
+								timeList.append(value.key)
+							}
+							timeList = timeList.sorted(by: { $0.compare($1) == .orderedDescending })
+							completionHandler(times[timeList.first!]!)
+						} else {print(" wouldn't let as NSARRY")}
+						
+					}
+				}
+		}
+	}
+	struct announcements{
+		let keychain = KeychainSwift()
+		var username: String?
+		var password: String?
+		var school: String?
+		init() {
+			username = keychain.get("accountName")
+			password = keychain.get("password")
+		}
+		func getAnnouncements(completionHandler: @escaping (_ result: [annoncement]) -> Void){
+			
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password
+				]
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/announcements/getAll", method: .get, parameters: parameters)
+					.responseJSON { json in
+						if let value = json.result.value as? NSArray{
+							var announcements = [annoncement]()
+							for (_, element) in value.enumerated(){
+								if let parsed = element as? [String: Any]{
+									
+									if let plsparse = annoncement(parsed){
+										announcements.append(plsparse)
+									} else{
+										print("you messed up announcements")
+									}
+								} else{
+									print("Wouldn't let")
+								}
+							}
+							
+							completionHandler(announcements)
+							
+						}
+				
+				}
+			}
+		}
 	}
 }
 struct classNoteee: Codable{
@@ -315,7 +403,6 @@ struct classNoteee: Codable{
 struct dailyClass: Codable{
 	var uuid: String
 	var title: String
-	var desc: String
 	var startDateTime: [String: String]
 	var endDateTime: [String: String]
 	var location: String
@@ -349,7 +436,6 @@ struct dailyClass: Codable{
 		let desc = "PLACEHOLDER"
 		self.uuid = uuid
 		self.title = title
-		self.desc = desc
 		self.startDateTime = startDateTime
 		self.endDateTime = endDateTime
 		self.location = location
@@ -360,7 +446,6 @@ struct dailyClass: Codable{
 	init() {
 		self.uuid = "uuid"
 		self.title = "title"
-		self.desc = "description"
 		self.startDateTime = ["Start": "End"]
 		self.endDateTime = ["Start": "End"]
 		self.location = "location"
@@ -370,6 +455,71 @@ struct dailyClass: Codable{
 	
 }
 
+struct annoncement: Codable{
+	var id: [String: Int]
+	var title: String
+	var desc: String
+	var poster: String
+	var type: String
+	var bannerImage: [String: String]
+	var content: String
+	var uuid: String
+	var postDateTime:[String: String]
+	var editDateTime:[String: String]
+	var resources: [[String: String]]
+	var targetAudience: [String]
+	var tags: [String]
+	
+	init?(_ json: [String: Any]){
+		guard
+			let id = json["id"] as? [String: Int],
+			let title = json["title"] as? String,
+			let desc = json["desc"] as? String,
+			let poster = json["poster"] as? String,
+			let type = json["type"] as? String,
+			let bannerImage = json["bannerImage"] as? [String: String],
+			let content = json["content"] as? String,
+			let uuid = json["uuid"] as? String,
+			let postDateTime = json["postDateTime"] as? [String: String],
+			let editDateTime = json["editDateTime"] as? [String: String],
+			let resources = json["resources"] as? [[String: String]],
+			let targetAudience = json["targetAudience"] as? [String],
+			let tags = json["tags"] as? [String]
+		else{
+				return nil
+		}
+		
+		self.id = id
+		self.title = title
+		self.desc = desc
+		self.poster = poster
+		self.type = type
+		self.bannerImage = bannerImage
+		self.content = content
+		self.uuid = uuid
+		self.postDateTime = postDateTime
+		self.editDateTime = editDateTime
+		self.resources = resources
+		self.targetAudience = targetAudience
+		self.tags = tags
+	}
+	
+	init(){
+		self.id = ["": 0]
+		self.title = ""
+		self.desc = ""
+		self.poster = ""
+		self.type = ""
+		self.bannerImage = ["": ""]
+		self.content = ""
+		self.uuid = ""
+		self.postDateTime = ["": ""]
+		self.editDateTime = ["": ""]
+		self.resources =  [["": ""]]
+		self.targetAudience = [""]
+		self.tags = [""]
+	}
+}
 
 //stirling/v3/accounts/update/displayName
 //stirling/v3/accounts/update/emailAddress

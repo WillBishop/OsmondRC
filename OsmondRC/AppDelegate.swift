@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		UIApplication.shared.statusBarStyle = .lightContent
+		if let logged = UserDefaults.standard.object(forKey: "loggedIn") as? Bool{
+			let keychain = KeychainSwift()
 
+			if logged{
+				let username = keychain.get("accountName")
+				let password = keychain.get("password")
+				if let password = password, let username = username{
+					Stirling.accounts().testCredentials(username: username, password: password, shouldLogOut: true, completionHandler: {_ in})
+				}
+			}
+		}
+		
+		
 		// Override point for customization after application launch.
 		return true
 	}

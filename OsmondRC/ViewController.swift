@@ -35,7 +35,7 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 			}
 			
 		} else{
-			print("Wouldn't let")
+			//print("Wouldn't let")
 		}
 		
 	}
@@ -45,22 +45,47 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		// Do any additional setup after loading the view, typically from a nib.
 		classTable.delegate = self
 		classTable.dataSource = self
-		
+		//classTable.isScrollEnabled = false
 		classTable.tableFooterView = UIView()
-		self.automaticallyAdjustsScrollViewInsets = false
+		self.automaticallyAdjustsScrollViewInsets = true
 		UIGraphicsEndImageContext()
 		Stirling.classes().getDaily(completionHandler: {result in
 			self.dailyClasses.removeAll()
 			for (_, element) in result.enumerated(){
 				self.dailyClasses.append(element)
 				self.classTable.reloadData()
-				print("done")
+				//print("done")
 
 
 			}
 		})
 		
+		if let existingImage = UserDefaults.standard.object(forKey: "userImage") as? Data{
+			if let converted = UIImage(data: existingImage){
+				let suggestImage  = converted
+				let suggestButton = UIButton(frame: CGRect(x:0, y:0, width:40, height:40))
+				suggestButton.setBackgroundImage(suggestImage, for: .normal)
+				suggestButton.addTarget(self, action: #selector(selectedProfile), for:.touchUpInside)
+				
+				// here where the magic happens, you can shift it where you like
+				suggestButton.transform = CGAffineTransform(translationX: 10, y: 0)
+				
+				// add the button to a container, otherwise the transform will be ignored
+				let suggestButtonContainer = UIView(frame: suggestButton.frame)
+				suggestButtonContainer.addSubview(suggestButton)
+				let suggestButtonItem = UIBarButtonItem(customView: suggestButtonContainer)
+				
+				// add button shift to the sides
+				tabBarController?.navigationItem.rightBarButtonItem = suggestButtonItem
+			}
+		}
+		
 	}
+	@objc func selectedProfile(){
+		let classView = storyboard?.instantiateViewController(withIdentifier: "accountView")
+		self.navigationController?.pushViewController(classView!, animated: true)
+	}
+	
 	override func viewDidAppear(_ animated: Bool) {
 		setupNavBar()
 		let bgColor = classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor
@@ -72,6 +97,10 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		classTable.backgroundColor = bgColor
 		navigationController?.navigationBar.backgroundColor = bgColor
 		UserDefaults().setColor(color: classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor, forKey: "todayColor")
+		tabBarController?.tabBar.tintColor = UserDefaults().colorForKey(key: "todayColor")
+		view.backgroundColor = UserDefaults().colorForKey(key: "todayColor")
+		navigationController?.view.backgroundColor = UserDefaults().colorForKey(key: "todayColor")
+		tabBarController?.navigationController?.view.backgroundColor = UserDefaults().colorForKey(key: "todayColor")
 		navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "signInOut").withRenderingMode(.alwaysOriginal)
 		Stirling.accounts().getProfilePicture(completionHandler: { image in
 			self.setupNavBar()
@@ -85,29 +114,15 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
 		//navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
-		navigationController?.navigationBar.shadowImage = UIImage()
 		
-		let suggestImage  = profileImage
-		let suggestButton = UIButton(frame: CGRect(x:0, y:0, width:40, height:40))
-		suggestButton.setBackgroundImage(suggestImage, for: .normal)
-		suggestButton.addTarget(self, action: #selector(selectedProfile), for:.touchUpInside)
+		tabBarController?.navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+		tabBarController?.navigationController?.navigationBar.shadowImage = UIImage()
+		let parent = self.parent as! UITabBarController
+		parent.navigationItem.title = days[weekday - 1]
 		
-		// here where the magic happens, you can shift it where you like
-		suggestButton.transform = CGAffineTransform(translationX: 10, y: 0)
-		
-		// add the button to a container, otherwise the transform will be ignored
-		let suggestButtonContainer = UIView(frame: suggestButton.frame)
-		suggestButtonContainer.addSubview(suggestButton)
-		let suggestButtonItem = UIBarButtonItem(customView: suggestButtonContainer)
-		
-		// add button shift to the side
-		navigationItem.rightBarButtonItem = suggestButtonItem
 		
 	}
-	@objc func selectedProfile(){
-		let classView = storyboard?.instantiateViewController(withIdentifier: "accountView")
-		self.navigationController?.pushViewController(classView!, animated: true)
-	}
+	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -123,11 +138,29 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		cell?.darkColor = darkColors[indexPath.row]
 		let info = dailyClasses[indexPath.row]
 		cell?.classRoom = info.location
-		cell?.classTime = "\(info.startDateTime["time"]!) - \(info.endDateTime["time"]!) "
+		cell?.classTime = "\(info.startDateTime["time"]!)"
 		cell?.classTeacher = info.teacher
 		cell?.className = info.title
 								.replacingOccurrences(of: "10 ", with: "")
 								.replacingOccurrences(of: " Lesson", with: "")
+		
+		cell?.classNote = info.classNote.title + "\n" + info.classNote.content.replacingOccurrences(of: "\n\n", with: "\n")
+		if info.classNote.title.isEmpty && info.classNote.content.isEmpty{
+			Stirling.classes().getLatestNote(info.uuid, completionHandler: {note in
+				(tableView.cellForRow(at: indexPath) as? classCell)?.storedNote = note
+				if note.content.range(of: note.title) != nil{ //If title in note itself, omit title from view
+					(tableView.cellForRow(at: indexPath) as? classCell)?.noteOutlet.text = "LAST NOTE: " + note.content.trimmingCharacters(in: .whitespacesAndNewlines)
+									.replacingOccurrences(of: "\n\n", with: "\n")
+				} else{
+					(tableView.cellForRow(at: indexPath) as? classCell)?.noteOutlet.text = "LAST NOTE: " + note.title + "\n" + note.content
+	
+						.trimmingCharacters(in: .whitespacesAndNewlines)
+						.replacingOccurrences(of: "\n\n", with: "\n")
+				}
+				
+			})
+		}
+		
 		cell?.update()
 		
 		return cell!
@@ -149,6 +182,10 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		if let encoded = try? encoder.encode(dailyClasses[indexPath.row]){
 			UserDefaults().set(encoded, forKey: "selectedClass")
 		}
+		if let encoded = try? encoder.encode((classTable.cellForRow(at: indexPath) as? classCell)?.storedNote){
+			UserDefaults().set(encoded, forKey: "oldNote")
+		}
+		
 		selectedRow = indexPath
 	}
 	override func viewDidDisappear(_ animated: Bool) {
@@ -161,17 +198,21 @@ class classCell: UITableViewCell{
 	@IBOutlet weak var timeOutlet: UILabel!
 	@IBOutlet weak var teacherOutlet: UILabel!
 	@IBOutlet weak var roomOutlet: UILabel!
+	@IBOutlet weak var noteOutlet: UITextView!
 	
+	var storedNote = classNoteee()
 	var className = String()
 	var classTime = String()
 	var classTeacher = String()
 	var classRoom = String()
+	var classNote = String()
 	var darkColor = UIColor()
 	func update(){
 		classOutlet.text = className
 		timeOutlet.text = classTime
 		teacherOutlet.text = classTeacher
 		roomOutlet.text = classRoom
+		noteOutlet.text = classNote
 	}
 }
 

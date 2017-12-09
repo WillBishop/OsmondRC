@@ -11,6 +11,7 @@
 		B97E6E8632626907DE49400E /* Pods_OsmondRCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0553C600B276F1BE0E5D0B11 /* Pods_OsmondRCTests.framework */; };
 		BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */; };
 		BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE103B5E1F959D21002DFD50 /* classViewController.swift */; };
+		BE2FEB2D1FDBEA960052EA18 /* announcementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */; };
 		BE3A594C1FD2A51300454A2C /* accountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A594B1FD2A51300454A2C /* accountController.swift */; };
 		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
 		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
@@ -20,6 +21,8 @@
 		BE52B6C21F92ECE5001A476D /* OsmondRCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6C11F92ECE5001A476D /* OsmondRCTests.swift */; };
 		BE52B6CD1F92ECE5001A476D /* OsmondRCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */; };
 		BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6DA1F92ED12001A476D /* Extensions.swift */; };
+		BE6C18F91FD9086E0006D98C /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C18F81FD9086E0006D98C /* navController.swift */; };
+		BE9244371FDBB2DF00E10632 /* announcementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9244361FDBB2DF00E10632 /* announcementsController.swift */; };
 		BE979ED21FB6A3CB00F64C55 /* onboardTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */; };
 		BEABCF661F95811000B01D93 /* Stirling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABCF651F95811000B01D93 /* Stirling.swift */; };
 		BEBAE7BC1F97642E0044B8BC /* signInOut.png in Resources */ = {isa = PBXBuildFile; fileRef = BEBAE7BB1F97642E0044B8BC /* signInOut.png */; };
@@ -55,6 +58,7 @@
 		93BF08BD862B5C4F4A038AC0 /* Pods-OsmondRC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsmondRC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0BDD871FB2A81B0016E9E5 /* onboardPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardPageController.swift; sourceTree = "<group>"; };
 		BE103B5E1F959D21002DFD50 /* classViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classViewController.swift; sourceTree = "<group>"; };
+		BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementViewController.swift; sourceTree = "<group>"; };
 		BE3A594B1FD2A51300454A2C /* accountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountController.swift; sourceTree = "<group>"; };
 		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		BE52B6CC1F92ECE5001A476D /* OsmondRCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsmondRCUITests.swift; sourceTree = "<group>"; };
 		BE52B6CE1F92ECE5001A476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE52B6DA1F92ED12001A476D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BE6C18F81FD9086E0006D98C /* navController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navController.swift; sourceTree = "<group>"; };
+		BE9244361FDBB2DF00E10632 /* announcementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementsController.swift; sourceTree = "<group>"; };
 		BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardTwoController.swift; sourceTree = "<group>"; };
 		BEABCF651F95811000B01D93 /* Stirling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stirling.swift; sourceTree = "<group>"; };
 		BEBAE7BB1F97642E0044B8BC /* signInOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signInOut.png; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		BE52B6A01F92ECE5001A476D = {
 			isa = PBXGroup;
 			children = (
+				BE6C18F81FD9086E0006D98C /* navController.swift */,
 				BE3A594B1FD2A51300454A2C /* accountController.swift */,
 				BE52B6AB1F92ECE5001A476D /* OsmondRC */,
 				BE52B6C01F92ECE5001A476D /* OsmondRCTests */,
@@ -149,6 +156,8 @@
 				BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */,
 				BE52B6AE1F92ECE5001A476D /* ViewController.swift */,
 				BE103B5E1F959D21002DFD50 /* classViewController.swift */,
+				BE9244361FDBB2DF00E10632 /* announcementsController.swift */,
+				BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */,
 				BE52B6B01F92ECE5001A476D /* Main.storyboard */,
 				BE52B6B31F92ECE5001A476D /* Assets.xcassets */,
 				BEBAE7BB1F97642E0044B8BC /* signInOut.png */,
@@ -504,9 +513,12 @@
 				BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */,
 				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
 				BEABCF661F95811000B01D93 /* Stirling.swift in Sources */,
+				BE6C18F91FD9086E0006D98C /* navController.swift in Sources */,
 				BE103B5F1F959D21002DFD50 /* classViewController.swift in Sources */,
 				BE52B6DB1F92ED12001A476D /* Extensions.swift in Sources */,
 				BEF0372F1FA483F000C38DB5 /* onboardOneController.swift in Sources */,
+				BE9244371FDBB2DF00E10632 /* announcementsController.swift in Sources */,
+				BE2FEB2D1FDBEA960052EA18 /* announcementViewController.swift in Sources */,
 				BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +693,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -698,6 +711,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willbishop.OsmondRC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
