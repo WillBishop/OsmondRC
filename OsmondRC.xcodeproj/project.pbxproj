@@ -14,6 +14,7 @@
 		BE2FEB2D1FDBEA960052EA18 /* announcementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */; };
 		BE2FEB301FDC0E710052EA18 /* dataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FEB2F1FDC0E710052EA18 /* dataModels.swift */; };
 		BE3A594C1FD2A51300454A2C /* accountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A594B1FD2A51300454A2C /* accountController.swift */; };
+		BE41A0811FDCC51A003A3D5B /* classListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41A0801FDCC51A003A3D5B /* classListController.swift */; };
 		BE52B6AD1F92ECE5001A476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */; };
 		BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52B6AE1F92ECE5001A476D /* ViewController.swift */; };
 		BE52B6B21F92ECE5001A476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52B6B01F92ECE5001A476D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		BE6C18F91FD9086E0006D98C /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C18F81FD9086E0006D98C /* navController.swift */; };
 		BE9244371FDBB2DF00E10632 /* announcementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9244361FDBB2DF00E10632 /* announcementsController.swift */; };
 		BE979ED21FB6A3CB00F64C55 /* onboardTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */; };
+		BEAA6A8F1FDCCE4100E7E08D /* classController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAA6A8E1FDCCE4100E7E08D /* classController.swift */; };
 		BEABCF661F95811000B01D93 /* Stirling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABCF651F95811000B01D93 /* Stirling.swift */; };
 		BEF0372D1FA483D400C38DB5 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF0372C1FA483D400C38DB5 /* Onboard.storyboard */; };
 		BEF0372F1FA483F000C38DB5 /* onboardOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0372E1FA483F000C38DB5 /* onboardOneController.swift */; };
@@ -61,6 +63,7 @@
 		BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementViewController.swift; sourceTree = "<group>"; };
 		BE2FEB2F1FDC0E710052EA18 /* dataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModels.swift; sourceTree = "<group>"; };
 		BE3A594B1FD2A51300454A2C /* accountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountController.swift; sourceTree = "<group>"; };
+		BE41A0801FDCC51A003A3D5B /* classListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classListController.swift; sourceTree = "<group>"; };
 		BE52B6A91F92ECE5001A476D /* OsmondRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsmondRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE52B6AC1F92ECE5001A476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE52B6AE1F92ECE5001A476D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		BE6C18F81FD9086E0006D98C /* navController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navController.swift; sourceTree = "<group>"; };
 		BE9244361FDBB2DF00E10632 /* announcementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementsController.swift; sourceTree = "<group>"; };
 		BE979ED11FB6A3CB00F64C55 /* onboardTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardTwoController.swift; sourceTree = "<group>"; };
+		BEAA6A8E1FDCCE4100E7E08D /* classController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classController.swift; sourceTree = "<group>"; };
 		BEABCF651F95811000B01D93 /* Stirling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stirling.swift; sourceTree = "<group>"; };
 		BEF0372C1FA483D400C38DB5 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		BEF0372E1FA483F000C38DB5 /* onboardOneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardOneController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				BE9244361FDBB2DF00E10632 /* announcementsController.swift */,
 				BE2FEB2C1FDBEA960052EA18 /* announcementViewController.swift */,
 				BE52B6B01F92ECE5001A476D /* Main.storyboard */,
+				BE41A0801FDCC51A003A3D5B /* classListController.swift */,
+				BEAA6A8E1FDCCE4100E7E08D /* classController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -456,13 +462,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OsmondRC/Pods-OsmondRC-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/PDFReader/PDFReader.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFReader.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -542,7 +548,9 @@
 				BE979ED21FB6A3CB00F64C55 /* onboardTwoController.swift in Sources */,
 				BE3A594C1FD2A51300454A2C /* accountController.swift in Sources */,
 				BE0BDD881FB2A81B0016E9E5 /* onboardPageController.swift in Sources */,
+				BEAA6A8F1FDCCE4100E7E08D /* classController.swift in Sources */,
 				BE52B6AF1F92ECE5001A476D /* ViewController.swift in Sources */,
+				BE41A0811FDCC51A003A3D5B /* classListController.swift in Sources */,
 				BEABCF661F95811000B01D93 /* Stirling.swift in Sources */,
 				BE6C18F91FD9086E0006D98C /* navController.swift in Sources */,
 				BE2FEB301FDC0E710052EA18 /* dataModels.swift in Sources */,

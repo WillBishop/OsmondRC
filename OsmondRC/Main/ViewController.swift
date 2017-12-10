@@ -85,7 +85,6 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		let classView = storyboard?.instantiateViewController(withIdentifier: "accountView")
 		self.navigationController?.pushViewController(classView!, animated: true)
 	}
-	
 	override func viewDidAppear(_ animated: Bool) {
 		setupNavBar()
 		let bgColor = classTable.cellForRow(at: IndexPath(row: 0, section: 0))?.backgroundColor

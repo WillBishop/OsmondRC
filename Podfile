@@ -6,7 +6,8 @@ target 'OsmondRC' do
   use_frameworks!
   pod 'Alamofire'
   pod 'KeychainSwift'	
-  pod 'SwiftyJSON'
+  pod 'PDFReader'
+
   # Pods for OsmondRC
 
   target 'OsmondRCTests' do

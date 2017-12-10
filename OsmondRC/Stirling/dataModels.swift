@@ -156,3 +156,62 @@ struct annoncement: Codable{
 		self.tags = [""]
 	}
 }
+
+struct homework: Codable{
+	var uuid: String
+	var title: String
+	var content: String
+	var postDateTime: [String: String]
+	
+	init?(_ json: [String: Any]){
+		guard let uuid = json["uuid"] as? String,
+			let title = json["title"] as? String,
+			let content = json["content"] as? String,
+			let postDateTime = json["postDateTime"] as? [String: String] else{
+				return nil
+		}
+		self.uuid = uuid
+		self.title = title
+		self.content = content
+		self.postDateTime = postDateTime
+	}
+}
+
+struct stirlingClass: Codable{
+	var className: String?
+	var classUuid: String?
+	
+	init?(_ json: [String: Any]){
+		guard let className = json["className"] as? String,
+			let classUuid = json["classUuid"] as? String else {
+				return nil
+		}
+		self.className = className
+		self.classUuid = classUuid
+	}
+	init(){
+		self.className = ""
+		self.classUuid = ""
+	}
+}
+
+struct resource: Codable{
+	var owner: String
+	var resUuid: String
+	var filePath: String
+	var arType: String
+	
+	init?(_ json: [String: Any]){
+		guard let owner = json["owner"] as? String,
+		let resUuid = json["resUuid"] as? String,
+		let filePath = json["filePath"] as? String,
+			let arType = json["arType"] as? String else{
+				return nil
+		}
+		self.owner = owner
+		self.resUuid = resUuid
+		self.filePath = filePath
+		self.arType = arType
+	}
+}
+

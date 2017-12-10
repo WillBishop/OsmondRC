@@ -118,8 +118,25 @@ class Stirling{
 			}
 			
 			classes().getDaily(completionHandler: {_ in
+				print("Got Daily Classes")
 				self.getProfilePicture(completionHandler: {_ in
+					print("Got Profile Picture")
 					self.loggedIn()
+				})
+			})
+			classes().getClassList(completionHandler: { result in
+				print("Got Class List")
+				let jsonencoder = JSONEncoder()
+				if let encoded = try? jsonencoder.encode(result){
+					UserDefaults.standard.set(encoded, forKey: "completeClassList")
+				}
+				for (_, element) in result.enumerated(){
+					classes().getResouces(element.classUuid!, completionHandler: {_ in
+						print("Got Resource List")
+					})
+				}
+				announcements().getAnnouncements(completionHandler: {_ in
+					print("Got Announcements")
 				})
 			})
 			
@@ -326,10 +343,91 @@ class Stirling{
 							completionHandler(times[timeList.first!]!)
 						} else {print(" wouldn't let as NSARRY")}
 						
-					}
 				}
+			}
 		}
+		
+		func getClassList(completionHandler: @escaping (_ result: [stirlingClass]) -> Void){
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password,
+					]
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/classes/get/classList", method: .get, parameters: parameters)
+					.responseJSON { response in
+						var classes = [stirlingClass]()
+						if let value = response.result.value as? NSArray{
+							for (_, element) in value.enumerated(){
+								if let unwrapped = element as? [String: Any]{
+									if let schoolClass = stirlingClass(unwrapped){
+										classes.append(schoolClass)
+									}
+									
+								}
+							}
+							let encoder = JSONEncoder()
+							
+							if let encoded = try? encoder.encode(classes){
+								UserDefaults().set(encoded, forKey: "classList")
+							}
+							completionHandler(classes)
+						}
+				}
+			}
+		}
+		func getResouces(_ uuid: String, completionHandler: @escaping (_ result: [resource]) -> Void){
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password,
+					"classUuid": uuid
+				]
+				Alamofire.request("https://da.gihs.sa.edu.au/stirling/v3/classes/get/resources", method: .get, parameters: parameters)
+					.responseJSON {response in
+						var resources = [resource]()
+						if let value = response.result.value as? NSArray{
+							for (_, element) in value.enumerated(){
+								if let unwrapped = element as? [String: Any]{
+									if let theresource = resource(unwrapped){
+										resources.append(theresource)
+									}
+								}
+								
+							}
+						}
+						let jsonencoder = JSONEncoder()
+						
+						if let encoded = try? jsonencoder.encode(resources) as? Data{
+							print("resources-\(uuid)")
+							UserDefaults.standard.set(encoded, forKey: "resources-\(uuid)")
+						}
+						
+						completionHandler(resources)
+				}
+			}
+		}
+		func downloadResource(_ classUuid: String, resourceUuid: String, completionHandler: @escaping (_ result: String) -> Void){
+			if let username = username, let password = password{
+				let parameters = [
+					"accountName": username,
+					"password": password,
+					"classUuid": classUuid,
+					"resourceUuid": resourceUuid
+				]
+				let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
+
+				Alamofire.download("https://da.gihs.sa.edu.au/stirling/v3/classes/download/resource", to: destination)
+					.downloadProgress { progress in
+						print("Download Progress: \(progress.fractionCompleted)")
+					}
+					
+			}
+			
+		}
+		
 	}
+	
+	
 	struct announcements{
 		let keychain = KeychainSwift()
 		var username: String?
@@ -362,15 +460,20 @@ class Stirling{
 									print("Wouldn't let")
 								}
 							}
-						
+							let jsonencoder = JSONEncoder()
+							if let data = try? jsonencoder.encode(announcements){
+								UserDefaults().set(data, forKey: "announcements")
+							}
 							completionHandler(announcements)
 							
 						}
-				
+						
 				}
 			}
 		}
+	
 	}
+	
 }
 
 //stirling/v3/accounts/update/displayName
