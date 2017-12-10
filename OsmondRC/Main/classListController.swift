@@ -39,6 +39,10 @@ class classListController: UIViewController, UITableViewDelegate, UITableViewDat
 		tabBarController?.navigationItem.title = "Resources"
 		
 	}
+	override func viewDidAppear(_ animated: Bool) {
+		tabBarController?.navigationItem.title = "Resources"
+		
+	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -75,6 +75,7 @@ class announcementsController: UIViewController, UITableViewDataSource, UITableV
 		
 		cell.title = info.title
 		cell.time = info.postDateTime["time"]!
+		cell.date = info.postDateTime["date"]!
 		cell.subject = info.desc
 		cell.announcementText = info.content
 		cell.poster = info.poster
@@ -118,12 +119,14 @@ class announcementCell: UITableViewCell{
 	@IBOutlet weak var subjectLabel: UILabel!
 	@IBOutlet weak var announcementTextView: UITextView!
 	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var dateLabel: UILabel!
 	
 	var title = ""
 	var time = ""
 	var poster = ""
 	var subject = ""
 	var announcementText = ""
+	var date = ""
 	
 	func update(){
 		timeLabel.text = time
@@ -131,5 +134,6 @@ class announcementCell: UITableViewCell{
 		subjectLabel.text = subject
 		announcementTextView.text = announcementText
 		titleLabel.text = title
+		dateLabel.text = date
 	}
 }

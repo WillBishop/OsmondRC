@@ -168,11 +168,19 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="timeLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtm-lJ-wLK">
+                                                    <rect key="frame" x="251" y="92" width="148" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.75294117647058822" green="0.41599592962184878" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="announcementTextView" destination="na8-Mq-V8o" id="oK5-dg-7du"/>
+                                            <outlet property="dateLabel" destination="Rtm-lJ-wLK" id="zPl-SZ-aer"/>
                                             <outlet property="posterLabel" destination="pq0-IA-FQP" id="iNU-NR-t6Q"/>
                                             <outlet property="subjectLabel" destination="PEz-Dz-1MX" id="aCT-Uk-Y78"/>
                                             <outlet property="timeLabel" destination="4jc-iG-By4" id="mCE-17-2Xd"/>
