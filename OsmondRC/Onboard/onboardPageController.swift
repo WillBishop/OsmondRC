@@ -28,14 +28,16 @@ class onboardPageController: UIPageViewController, UIPageViewControllerDelegate,
 		
 		var label: UILabel = {
 			let newLabel = UILabel()
-			newLabel.frame = CGRect(x: 52, y: 49, width: 310, height: 102)
+			newLabel.frame = CGRect(x: 42, y: 49, width: 310, height: 102)
 			newLabel.textColor = UIColor.white
+			newLabel.center.x = self.view.center.x
 			newLabel.font = UIFont.systemFont(ofSize: 64, weight: .semibold)
 			newLabel.text = "Osmond"
 			newLabel.textAlignment = .center
 			return newLabel
 		}()
 		self.view.addSubview(label)
+		
 		self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "gihsTwo"))
 		NotificationCenter.default.addObserver(self, selector: #selector(moveNext), name: NSNotification.Name(rawValue: "moveNext"), object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(moveToMenu), name: NSNotification.Name(rawValue: "goToMenu"), object: nil)

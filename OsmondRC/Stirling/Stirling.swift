@@ -176,7 +176,7 @@ class Stirling{
 			let storyboard = UIStoryboard(name: "Main", bundle: nil)
 			//let mainController = storyboard.instantiateViewController(withIdentifier: "tabcontrollerforMain") as UIViewController
 			let mainController = storyboard.instantiateViewController(withIdentifier: "initialView") as UIViewController
-			
+			print("Going")
 			let appDelegate =  UIApplication.shared.delegate as! AppDelegate
 			appDelegate.window?.rootViewController = mainController
 			getDisplayName(completionHandler: {_ in
@@ -420,7 +420,7 @@ class Stirling{
 					.downloadProgress { progress in
 						print("Download Progress: \(progress.fractionCompleted)")
 					}
-					
+				
 			}
 			
 		}
