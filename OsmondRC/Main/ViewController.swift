@@ -41,6 +41,9 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(setupPicture), name: NSNotification.Name(rawValue: "loadImage"), object: nil)
+		self.setupPicture()
 		classTable.separatorColor = UIColor.clear
 		// Do any additional setup after loading the view, typically from a nib.
 		classTable.delegate = self
@@ -60,6 +63,12 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 			}
 		})
 		
+		
+		
+	}
+	
+	@objc func setupPicture(){
+		print("Called")
 		if let existingImage = UserDefaults.standard.object(forKey: "userImage") as? Data{
 			if let converted = UIImage(data: existingImage){
 				let suggestImage  = converted
@@ -77,9 +86,12 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 				
 				// add button shift to the sides
 				tabBarController?.navigationItem.rightBarButtonItem = suggestButtonItem
+			} else {
+				print("Got this far")
 			}
+		} else {
+			print("Wouldn't let")
 		}
-		
 	}
 	@objc func selectedProfile(){
 		let classView = storyboard?.instantiateViewController(withIdentifier: "accountView")
@@ -142,7 +154,9 @@ class todayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		cell?.className = info.title
 								.replacingOccurrences(of: "10 ", with: "")
 								.replacingOccurrences(of: " Lesson", with: "")
-		
+		if dailyClasses.count > 4{
+		//	cell?.noteOutlet.line
+		}
 		cell?.classNote = info.classNote.title + "\n" + info.classNote.content.replacingOccurrences(of: "\n\n", with: "\n")
 		if info.classNote.title.isEmpty && info.classNote.content.isEmpty{
 			Stirling.classes().getLatestNote(info.uuid, completionHandler: {note in

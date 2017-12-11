@@ -196,7 +196,11 @@ class Stirling{
 						if let data = response.data{
 							let image = UIImage(data: data)
 							if let img = image{
+								print("Got image")
+								
+
 								UserDefaults.standard.set(UIImagePNGRepresentation(img), forKey: "userImage")
+								NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadImage"), object: nil)
 								completionHandler(img)
 							} else {print("bad image")}
 						} else {
